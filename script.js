@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('contactEmail')?.value.trim() || 'No especificado';
     const phone = document.getElementById('contactPhone')?.value.trim() || 'No especificado';
     const service = document.getElementById('contactService')?.value || 'Consulta General';
-    const budget = document.getElementById('contactBudget')?.value || 'A definir';
     const message = document.getElementById('contactMessage')?.value.trim() || 'Hola, me gustaría recibir más información.';
 
     const text = `*Nueva Consulta - Head Brand Partner*\n` +
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
                  `📧 *Email:* ${email}\n` +
                  `📱 *Teléfono:* ${phone}\n` +
                  `🎯 *Servicio:* ${service}\n` +
-                 `💼 *Presupuesto:* ${budget}\n` +
                  `💬 *Mensaje:* ${message}`;
 
     return `https://wa.me/${AGENCY_WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
