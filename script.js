@@ -25,18 +25,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
-      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-      navLinks.classList.toggle('open');
+    const toggleMenu = (forceState) => {
+      const willOpen = typeof forceState === 'boolean' 
+        ? forceState 
+        : !navLinks.classList.contains('open');
+
+      mobileMenuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      mobileMenuBtn.classList.toggle('active', willOpen);
+      navLinks.classList.toggle('open', willOpen);
+      document.body.classList.toggle('nav-open', willOpen);
+    };
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
 
     // Close mobile menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        toggleMenu(false);
       });
+    });
+
+    // Close when clicking outside header
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('open') && !siteHeader.contains(e.target)) {
+        toggleMenu(false);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        toggleMenu(false);
+      }
     });
   }
 
@@ -88,39 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
-  // 4b. Clients Sector Filter Tabs
-  const clientFilterBtns = document.querySelectorAll('.client-filter-btn');
-  const clientCards = document.querySelectorAll('#clientsGrid .client-logo-card');
-
-  if (clientFilterBtns.length > 0 && clientCards.length > 0) {
-    clientFilterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        clientFilterBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-
-        const filterValue = btn.getAttribute('data-client-filter');
-
-        clientCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          if (filterValue === 'all' || cardCategory === filterValue) {
-            card.style.display = 'flex';
-            requestAnimationFrame(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            });
-          } else {
-            card.style.display = 'none';
-            card.style.opacity = '0';
-          }
-        });
-      });
-    });
-  }
 
   // 5. Pre-select Service in Contact Form when clicking "Solicitar" on a service card
   const serviceSelectInput = document.getElementById('contactService');
