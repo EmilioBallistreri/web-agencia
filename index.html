@@ -647,62 +647,278 @@
           </p>
         </header>
 
-        <!-- Representative Clients Showcase -->
-        <div class="clients-logo-grid">
-          <div class="client-logo-card">
-            <div class="client-icon-badge">AS</div>
-            <div class="client-name">A SAVE Logistics</div>
-            <div class="client-industry">Comercio Exterior & Logística</div>
-            <div class="client-result">+210% Leads Corporativos</div>
+        <!-- Infinite Ribbon Ticker -->
+        <div class="clients-ticker-wrap" aria-hidden="true">
+          <div class="clients-ticker-track">
+            <!-- Set 1 -->
+            <div class="ticker-item" style="--client-bg: #0091D3;"><img src="assets/clientes/colorshop.png" alt="Colorshop" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/easyagro.jpg" alt="EasyAgro" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #030305;"><img src="assets/clientes/fn-aberturas.jpg" alt="FN Aberturas" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #F29200;"><img src="assets/clientes/expertools.jpg" alt="Expertools" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/buenaventura.jpg" alt="BuenaVentura" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/cauquen.jpg" alt="Cauquén" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #4F6246;"><img src="assets/clientes/arges-water.jpg" alt="Arges Water" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #DEA037;"><img src="assets/clientes/inwood.png" alt="Inwood" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/cibici.jpg" alt="CIBICI" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/eukana.jpg" alt="Eukana" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/manestar-avila.png" alt="Manestar + Avila" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/jambo.png" alt="Jambo" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/nutriva-agro.png" alt="Nutriva Agro" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/multicor.png" alt="Multicor" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/mjp-odontologia.png" alt="María José Pia" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/sushi-2x1.png" alt="Sushi 2x1" loading="lazy"></div>
+            <!-- Set 2 (Seamless loop) -->
+            <div class="ticker-item" style="--client-bg: #0091D3;"><img src="assets/clientes/colorshop.png" alt="Colorshop" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/easyagro.jpg" alt="EasyAgro" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #030305;"><img src="assets/clientes/fn-aberturas.jpg" alt="FN Aberturas" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #F29200;"><img src="assets/clientes/expertools.jpg" alt="Expertools" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/buenaventura.jpg" alt="BuenaVentura" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/cauquen.jpg" alt="Cauquén" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #4F6246;"><img src="assets/clientes/arges-water.jpg" alt="Arges Water" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #DEA037;"><img src="assets/clientes/inwood.png" alt="Inwood" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/cibici.jpg" alt="CIBICI" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/eukana.jpg" alt="Eukana" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/manestar-avila.png" alt="Manestar + Avila" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/jambo.png" alt="Jambo" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/nutriva-agro.png" alt="Nutriva Agro" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/multicor.png" alt="Multicor" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/mjp-odontologia.png" alt="María José Pia" loading="lazy"></div>
+            <div class="ticker-item" style="--client-bg: #FFFFFF;"><img src="assets/clientes/sushi-2x1.png" alt="Sushi 2x1" loading="lazy"></div>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="clients-filter-nav" role="tablist" aria-label="Filtrar clientes por industria">
+          <button type="button" class="client-filter-btn active" data-client-filter="all" role="tab" aria-selected="true">
+            <span>Todos</span>
+            <span class="filter-count">16</span>
+          </button>
+          <button type="button" class="client-filter-btn" data-client-filter="agro" role="tab" aria-selected="false">
+            <span>Agro & Bio</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button type="button" class="client-filter-btn" data-client-filter="industria" role="tab" aria-selected="false">
+            <span>Industria & B2B</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button type="button" class="client-filter-btn" data-client-filter="retail" role="tab" aria-selected="false">
+            <span>Retail & Comercio</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button type="button" class="client-filter-btn" data-client-filter="servicios" role="tab" aria-selected="false">
+            <span>Salud & Servicios</span>
+            <span class="filter-count">4</span>
+          </button>
+        </div>
+
+        <!-- Real Clients Showcase Grid -->
+        <div class="clients-logo-grid" id="clientsGrid">
+          <!-- 1. Colorshop -->
+          <div class="client-logo-card" data-category="retail">
+            <div class="client-logo-box" style="--client-bg: #0091D3;">
+              <img src="assets/clientes/colorshop.png" alt="Logo Colorshop Pinturerías" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Retail & Franquicias</span>
+              <h3 class="client-name">Colorshop</h3>
+              <p class="client-industry">Cadena Líder de Pinturerías</p>
+              <div class="client-result">Branding & Publicidad</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">GH</div>
-            <div class="client-name">Gühring Industrial</div>
-            <div class="client-industry">Herramientas & Maquinaria</div>
-            <div class="client-result">Posicionamiento Google #1</div>
+          <!-- 2. EasyAgro -->
+          <div class="client-logo-card" data-category="agro">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/easyagro.jpg" alt="Logo EasyAgro" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Agro & AgTech</span>
+              <h3 class="client-name">EasyAgro</h3>
+              <p class="client-industry">Muestreo y Análisis de Suelos</p>
+              <div class="client-result">Estrategia Digital & Redes</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">LM</div>
-            <div class="client-name">Laboratorio Martínez</div>
-            <div class="client-industry">Salud & Análisis Clínicos</div>
-            <div class="client-result">+340% Consultas Online</div>
+          <!-- 3. FN Aberturas -->
+          <div class="client-logo-card" data-category="industria">
+            <div class="client-logo-box" style="--client-bg: #030305;">
+              <img src="assets/clientes/fn-aberturas.jpg" alt="Logo FN Aberturas de Aluminio" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Industria & Construcción</span>
+              <h3 class="client-name">FN Aberturas</h3>
+              <p class="client-industry">Aberturas de Aluminio a Medida</p>
+              <div class="client-result">Sitio Web & Google Ads</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">B24</div>
-            <div class="client-name">Baterías 24Hs</div>
-            <div class="client-industry">Servicios Mecánicos Urgentes</div>
-            <div class="client-result">Campañas Google Ads 5.2x ROAS</div>
+          <!-- 4. Expertools Mendiolaza -->
+          <div class="client-logo-card" data-category="industria">
+            <div class="client-logo-box" style="--client-bg: #F29200;">
+              <img src="assets/clientes/expertools.jpg" alt="Logo Expertools Mendiolaza" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Ferretería & Herramientas</span>
+              <h3 class="client-name">Expertools</h3>
+              <p class="client-industry">Herramientas Profesionales</p>
+              <div class="client-result">Gestión de Redes & Pauta</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">PB</div>
-            <div class="client-name">Patricia Bonet</div>
-            <div class="client-industry">Audición & Dispositivos Médicos</div>
-            <div class="client-result">Rediseño Web & Marca</div>
+          <!-- 5. BuenaVentura -->
+          <div class="client-logo-card" data-category="agro">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/buenaventura.jpg" alt="Logo BuenaVentura Agronegocios" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Agro & Granos</span>
+              <h3 class="client-name">BuenaVentura</h3>
+              <p class="client-industry">Agronegocios y Producción</p>
+              <div class="client-result">Identidad & Comunicación</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">NV</div>
-            <div class="client-name">Nova Moda Argentina</div>
-            <div class="client-industry">Ecommerce de Indumentaria</div>
-            <div class="client-result">Ventas x4 en Meta Ads</div>
+          <!-- 6. Estufas Cauquén -->
+          <div class="client-logo-card" data-category="industria">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/cauquen.jpg" alt="Logo Estufas Cauquén" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Hogar & Calefacción</span>
+              <h3 class="client-name">Cauquén</h3>
+              <p class="client-industry">Estufas y Calefacción Eficiente</p>
+              <div class="client-result">Campañas Meta & Ventas</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">TR</div>
-            <div class="client-name">Terra Inmobiliaria</div>
-            <div class="client-industry">Desarrollos Inmobiliarios</div>
-            <div class="client-result">Captación Inversores B2B</div>
+          <!-- 7. Arges Water -->
+          <div class="client-logo-card" data-category="agro">
+            <div class="client-logo-box" style="--client-bg: #4F6246;">
+              <img src="assets/clientes/arges-water.jpg" alt="Logo Arges Water" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Agro & Riego</span>
+              <h3 class="client-name">Arges Water</h3>
+              <p class="client-industry">Ingeniería en Sistemas de Riego</p>
+              <div class="client-result">Contenido & Audiovisual</div>
+            </div>
           </div>
 
-          <div class="client-logo-card">
-            <div class="client-icon-badge">GF</div>
-            <div class="client-name">Gourmet Fusion Franquicias</div>
-            <div class="client-industry">Cadena Gastronómica</div>
-            <div class="client-result">Gestión de Redes & Contenido</div>
+          <!-- 8. Inwood -->
+          <div class="client-logo-card" data-category="retail">
+            <div class="client-logo-box" style="--client-bg: #DEA037;">
+              <img src="assets/clientes/inwood.png" alt="Logo Inwood Equipamiento Interior" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Diseño & Amoblamientos</span>
+              <h3 class="client-name">Inwood</h3>
+              <p class="client-industry">Equipamiento Interior y Muebles</p>
+              <div class="client-result">Catálogos & Leads B2B</div>
+            </div>
+          </div>
+
+          <!-- 9. CIBICI -->
+          <div class="client-logo-card" data-category="servicios">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/cibici.jpg" alt="Logo CIBICI CONICET UNC" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Ciencia & Biotecnología</span>
+              <h3 class="client-name">CIBICI (CONICET - UNC)</h3>
+              <p class="client-industry">Investigación en Ciencias Químicas</p>
+              <div class="client-result">Comunicación Institucional</div>
+            </div>
+          </div>
+
+          <!-- 10. Eukana -->
+          <div class="client-logo-card" data-category="servicios">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/eukana.jpg" alt="Logo Eukana Ortopedia" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Salud & Rehabilitación</span>
+              <h3 class="client-name">Eukana</h3>
+              <p class="client-industry">Ortopedia y Rehabilitación Médica</p>
+              <div class="client-result">Presencia Web & Redes</div>
+            </div>
+          </div>
+
+          <!-- 11. Manestar + Avila -->
+          <div class="client-logo-card" data-category="servicios">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/manestar-avila.png" alt="Logo Manestar Avila Arquitectura" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Arquitectura & Diseño</span>
+              <h3 class="client-name">Manestar + Avila</h3>
+              <p class="client-industry">Estudio de Arquitectura Integral</p>
+              <div class="client-result">Branding & Posicionamiento</div>
+            </div>
+          </div>
+
+          <!-- 12. Jambo -->
+          <div class="client-logo-card" data-category="retail">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/jambo.png" alt="Logo Jambo Calzado" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Moda & Calzado</span>
+              <h3 class="client-name">Jambo</h3>
+              <p class="client-industry">Calzado Urbano y Confort</p>
+              <div class="client-result">E-commerce & Publicidad</div>
+            </div>
+          </div>
+
+          <!-- 13. Nutriva Agro -->
+          <div class="client-logo-card" data-category="agro">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/nutriva-agro.png" alt="Logo Nutriva Agro" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Agroinsumos & Nutrición</span>
+              <h3 class="client-name">Nutriva Agro</h3>
+              <p class="client-industry">Biológicos y Nutrición Vegetal</p>
+              <div class="client-result">Estrategia de Marca & Web</div>
+            </div>
+          </div>
+
+          <!-- 14. Multicor -->
+          <div class="client-logo-card" data-category="industria">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/multicor.png" alt="Logo Multicor" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Gráfica & Vía Pública</span>
+              <h3 class="client-name">Multicor</h3>
+              <p class="client-industry">Comunicación Visual y Cartelería</p>
+              <div class="client-result">Identidad Corporativa</div>
+            </div>
+          </div>
+
+          <!-- 15. María José Pia -->
+          <div class="client-logo-card" data-category="servicios">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/mjp-odontologia.png" alt="Logo María José Pia Odontología" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Salud Odontológica</span>
+              <h3 class="client-name">María José Pia</h3>
+              <p class="client-industry">Clínica Odontológica Especializada</p>
+              <div class="client-result">Captación de Pacientes</div>
+            </div>
+          </div>
+
+          <!-- 16. Sushi 2x1 -->
+          <div class="client-logo-card" data-category="retail">
+            <div class="client-logo-box" style="--client-bg: #FFFFFF;">
+              <img src="assets/clientes/sushi-2x1.png" alt="Logo Sushi 2x1" class="client-logo-img" loading="lazy" width="200" height="80">
+            </div>
+            <div class="client-card-info">
+              <span class="client-industry-pill">Gastronomía & Delivery</span>
+              <h3 class="client-name">Sushi 2x1</h3>
+              <p class="client-industry">Restó y Delivery Gastronómico</p>
+              <div class="client-result">Social Media & Pauta Ads</div>
+            </div>
           </div>
         </div>
 

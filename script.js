@@ -89,6 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 4b. Clients Sector Filter Tabs
+  const clientFilterBtns = document.querySelectorAll('.client-filter-btn');
+  const clientCards = document.querySelectorAll('#clientsGrid .client-logo-card');
+
+  if (clientFilterBtns.length > 0 && clientCards.length > 0) {
+    clientFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        clientFilterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filterValue = btn.getAttribute('data-client-filter');
+
+        clientCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (filterValue === 'all' || cardCategory === filterValue) {
+            card.style.display = 'flex';
+            requestAnimationFrame(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+          }
+        });
+      });
+    });
+  }
+
   // 5. Pre-select Service in Contact Form when clicking "Solicitar" on a service card
   const serviceSelectInput = document.getElementById('contactService');
   const serviceCtas = document.querySelectorAll('[data-service-select]');
