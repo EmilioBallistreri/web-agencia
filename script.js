@@ -163,18 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Form Submit Handler
+  // Form Submit Handler con envío real a DonWeb vía enviar.php
   if (agencyContactForm) {
-    agencyContactForm.addEventListener('submit', (e) => {
+    agencyContactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       // Basic validation
-      const name = document.getElementById('contactName').value.trim();
-      const company = document.getElementById('contactCompany').value.trim();
-      const email = document.getElementById('contactEmail').value.trim();
-      const phone = document.getElementById('contactPhone').value.trim();
-      const service = document.getElementById('contactService').value;
-      const message = document.getElementById('contactMessage').value.trim();
+      const name = document.getElementById('contactName')?.value.trim();
+      const company = document.getElementById('contactCompany')?.value.trim();
+      const email = document.getElementById('contactEmail')?.value.trim();
+      const phone = document.getElementById('contactPhone')?.value.trim();
+      const service = document.getElementById('contactService')?.value;
+      const message = document.getElementById('contactMessage')?.value.trim();
 
       if (!name || !company || !email || !phone || !service || !message) {
         showStatus('Por favor completá todos los campos requeridos marcados con (*).', 'error');
@@ -188,17 +188,36 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate successful submission
       const submitBtn = document.getElementById('submitFormBtn');
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Enviando propuesta...</span>';
+      const originalBtnHtml = submitBtn.innerHTML;
 
-      setTimeout(() => {
-        showStatus(`¡Excelente, ${name}! Hemos recibido tu consulta sobre "${service}". Nos pondremos en contacto contigo dentro de las próximas 2 horas hábiles.`, 'success');
-        agencyContactForm.reset();
+      // Estado de carga visual
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Enviando consulta...</span>';
+
+      try {
+        const formData = new FormData(agencyContactForm);
+        const response = await fetch('enviar.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          showStatus(result.message, 'success');
+          agencyContactForm.reset();
+        } else {
+          showStatus(result.message || 'No fue posible enviar tu consulta en este momento.', 'error');
+        }
+      } catch (err) {
+        // En caso de probar localmente en la PC (sin servidor PHP activo) o error de conexión
+        console.warn('Error en la comunicación con enviar.php:', err);
+        showStatus('Aviso: Para enviar correos reales, el sitio debe estar alojado en el servidor de DonWeb (o con un entorno PHP activo). También podés enviarnos tu consulta directamente por WhatsApp.', 'error');
+      } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = `<span>Enviar Consulta</span><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>`;
-      }, 1000);
+        submitBtn.innerHTML = originalBtnHtml;
+      }
     });
   }
 

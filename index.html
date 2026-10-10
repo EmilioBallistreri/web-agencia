@@ -959,7 +959,10 @@
               <p>Completá los datos y nuestro equipo preparará una propuesta adaptada a tus objetivos comerciales.</p>
             </div>
 
-            <form id="agencyContactForm" novalidate>
+            <form id="agencyContactForm" action="enviar.php" method="POST" novalidate>
+              <!-- Campo Honeypot invisible para protección anti-spam -->
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; width: 1px; height: 1px;" aria-hidden="true">
+
               <div class="form-row">
                 <div class="form-group">
                   <label for="contactName" class="form-label">Nombre y Apellido *</label>
